@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TikTok Callback</title>
+</head>
+<body>
+    <h2>TikTok Authorization Callback</h2>
+    <p>Authorization completed.</p>
+
+    <p><b>Code:</b> <span id="code"></span></p>
+    <p><b>State:</b> <span id="state"></span></p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("code").textContent =
+            params.get("code") || "No code received";
+
+        document.getElementById("state").textContent =
+            params.get("state") || "No state received";
+    </script>
+</body>
+</html>
